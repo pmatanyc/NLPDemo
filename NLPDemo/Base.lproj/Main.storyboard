@@ -1,24 +1,201 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13178.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WFa-dV-mZJ">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13156.2"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="8bC-Xf-vdC">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="NLPDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zUL-N7-b0w">
+                                <rect key="frame" x="133" y="393.5" width="108" height="30"/>
+                                <state key="normal" title="Start Recording"/>
+                                <connections>
+                                    <action selector="recordButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cSW-Pw-7nT"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zbl-mH-dRa">
+                                <rect key="frame" x="148.5" y="273" width="77.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Zbl-mH-dRa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-50" id="1eG-3P-j0T"/>
+                            <constraint firstItem="Zbl-mH-dRa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UIM-aC-KSn"/>
+                            <constraint firstItem="zUL-N7-b0w" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="75" id="Ugl-hf-9Gp"/>
+                            <constraint firstItem="zUL-N7-b0w" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qdK-cu-QJj"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="UCw-Vq-4dN">
+                        <barButtonItem key="rightBarButtonItem" title="Text Analysis" id="11G-Mj-MwD">
+                            <connections>
+                                <segue destination="fKQ-Ny-Q8k" kind="show" id="DgY-XH-SSb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="Zbl-mH-dRa" id="ryR-5g-UeD"/>
+                        <outlet property="recordButton" destination="zUL-N7-b0w" id="w6J-cn-cjX"/>
+                        <segue destination="fKQ-Ny-Q8k" kind="show" id="PCU-LV-Kjh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="476" y="170.46476761619192"/>
+        </scene>
+        <!--Text Analysis View Controller-->
+        <scene sceneID="smb-Yo-5Ed">
+            <objects>
+                <viewController storyboardIdentifier="TextAnalysis" id="fKQ-Ny-Q8k" customClass="TextAnalysisViewController" customModule="NLPDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eVv-be-FTF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uPa-rx-gvh">
+                                <rect key="frame" x="20" y="74" width="335" height="442"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">So in case you haven't logged onto the internet anytime between now and May 2014, here's some BREAKING NEWS for ya: Solange Knowles attacked Jay-Z in an elevator three years ago, and the security footage went viral. Now, in true Knowles-Carter fashion, Beyoncé and Jay-Z have remained fairly silent on the incident over the years. But in a recent (and rare) interview on Tidal's Rap Radar podcast, Jay-Z finally opened up about the past drama with his sister-in-law — and it was honestly really sweet.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="siE-Rz-vZd">
+                                <rect key="frame" x="20" y="541" width="335" height="29"/>
+                                <segments>
+                                    <segment title="Part of Speech"/>
+                                    <segment title="Name Identification"/>
+                                </segments>
+                                <connections>
+                                    <action selector="tagSchemesSegmentedControlPressed:" destination="fKQ-Ny-Q8k" eventType="valueChanged" id="efq-Xh-8wR"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="JMR-xW-W08">
+                                <rect key="frame" x="20" y="589" width="335" height="29"/>
+                                <segments>
+                                    <segment title="noun"/>
+                                    <segment title="verb"/>
+                                    <segment title="adjective"/>
+                                    <segment title="determiner"/>
+                                </segments>
+                                <connections>
+                                    <action selector="partOfSpeechSegmentedControlPressed:" destination="fKQ-Ny-Q8k" eventType="valueChanged" id="7aN-vr-YAD"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BY8-iw-RoZ" firstAttribute="trailing" secondItem="uPa-rx-gvh" secondAttribute="trailing" constant="20" id="8Fp-U5-SAZ"/>
+                            <constraint firstItem="JMR-xW-W08" firstAttribute="leading" secondItem="BY8-iw-RoZ" secondAttribute="leading" constant="20" id="Are-r7-B9x"/>
+                            <constraint firstItem="uPa-rx-gvh" firstAttribute="leading" secondItem="BY8-iw-RoZ" secondAttribute="leading" constant="20" id="Gtx-Sy-MVo"/>
+                            <constraint firstItem="siE-Rz-vZd" firstAttribute="leading" secondItem="BY8-iw-RoZ" secondAttribute="leading" constant="20" id="Gz5-Fx-0Gg"/>
+                            <constraint firstItem="BY8-iw-RoZ" firstAttribute="bottom" secondItem="JMR-xW-W08" secondAttribute="bottom" constant="50" id="NuS-4H-Dzj"/>
+                            <constraint firstItem="siE-Rz-vZd" firstAttribute="top" secondItem="uPa-rx-gvh" secondAttribute="bottom" constant="25" id="OWv-Mh-EZy"/>
+                            <constraint firstItem="BY8-iw-RoZ" firstAttribute="trailing" secondItem="siE-Rz-vZd" secondAttribute="trailing" constant="20" id="R76-MY-xY2"/>
+                            <constraint firstItem="siE-Rz-vZd" firstAttribute="top" secondItem="uPa-rx-gvh" secondAttribute="bottom" constant="25" id="Ul8-wx-6S6"/>
+                            <constraint firstItem="JMR-xW-W08" firstAttribute="top" secondItem="siE-Rz-vZd" secondAttribute="bottom" constant="20" id="VXg-zq-tg2"/>
+                            <constraint firstItem="BY8-iw-RoZ" firstAttribute="trailing" secondItem="JMR-xW-W08" secondAttribute="trailing" constant="20" id="rno-NH-iuz"/>
+                            <constraint firstItem="uPa-rx-gvh" firstAttribute="top" secondItem="BY8-iw-RoZ" secondAttribute="top" constant="10" id="zH2-17-enf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BY8-iw-RoZ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="b2t-Il-jhN">
+                        <barButtonItem key="rightBarButtonItem" title="Lemmatization" id="RqQ-49-Imm">
+                            <connections>
+                                <segue destination="zsW-WB-foR" kind="show" id="RLM-F7-ivx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="partOfSpeechSegmentedControl" destination="JMR-xW-W08" id="Wex-ko-BkK"/>
+                        <outlet property="tagSchemesSegmentedControl" destination="siE-Rz-vZd" id="2ev-Gq-Mgt"/>
+                        <outlet property="textView" destination="uPa-rx-gvh" id="QaR-xW-5Ey"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3SY-N0-bwf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1181.5999999999999" y="165.06746626686657"/>
+        </scene>
+        <!--Lemmas View Controller-->
+        <scene sceneID="2gB-Gj-hbB">
+            <objects>
+                <viewController id="zsW-WB-foR" customClass="LemmasViewController" customModule="NLPDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lqC-gS-k6U">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="usy-ie-8cf">
+                                <rect key="frame" x="10" y="130" width="355" height="527"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">Shannon and Matt wanted to see a movie. It was date night, and on date nights, they see movies. Shannon turned to her most trusted moviegoing adviser. Matt turned to his.
+
+“It had over a 93 percent! I think it was actually 97 percent,” says Shannon as she exits a Saturday-evening screening of Detroit at Los Angeles’s Glendale Galleria mall. “I just trust Rotten Tomatoes.”
+
+“I hate Rotten Tomatoes,” says Matt, Shannon’s date who works in home video marketing for a major studio. “I think it’s helping ruin the movie industry. I work in the movie industry. … I hear too many people say, ‘I won’t see anything under 80 percent.’ But the way that they determine the rating is [that] people now game the system.”
+
+Matt trusts filmmakers and the word around town when he makes his decision. Shannon uses a website that aggregates reviews and tabulates a score that represents a movie’s “freshness.” Shannon sees consensus in math. Matt sees a fraudulent system.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <searchBar contentMode="redraw" placeholder="Enter search term" translatesAutoresizingMaskIntoConstraints="NO" id="hKM-ej-MIK">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hKM-ej-MIK" firstAttribute="top" secondItem="1F5-hB-diQ" secondAttribute="top" id="J5D-aN-A1z"/>
+                            <constraint firstItem="usy-ie-8cf" firstAttribute="top" secondItem="hKM-ej-MIK" secondAttribute="bottom" constant="10" id="Kyg-pE-IeW"/>
+                            <constraint firstItem="hKM-ej-MIK" firstAttribute="leading" secondItem="lqC-gS-k6U" secondAttribute="leading" id="MvU-Px-YSz"/>
+                            <constraint firstItem="1F5-hB-diQ" firstAttribute="trailing" secondItem="usy-ie-8cf" secondAttribute="trailing" constant="10" id="fhm-eV-xFw"/>
+                            <constraint firstAttribute="trailing" secondItem="hKM-ej-MIK" secondAttribute="trailing" id="hXh-y2-emH"/>
+                            <constraint firstItem="1F5-hB-diQ" firstAttribute="bottom" secondItem="usy-ie-8cf" secondAttribute="bottom" constant="10" id="rxF-fz-zcU"/>
+                            <constraint firstItem="usy-ie-8cf" firstAttribute="centerX" secondItem="lqC-gS-k6U" secondAttribute="centerX" id="yPR-uU-cJp"/>
+                            <constraint firstItem="usy-ie-8cf" firstAttribute="leading" secondItem="1F5-hB-diQ" secondAttribute="leading" constant="10" id="yWq-RS-QWr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1F5-hB-diQ"/>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="hKM-ej-MIK" id="5EZ-FP-I3f"/>
+                        <outlet property="textView" destination="usy-ie-8cf" id="RuE-5T-6Pi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gCa-Q4-64P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1880.8" y="159.67016491754123"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2OF-Rp-S4J">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WFa-dV-mZJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MIc-m1-hgz">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="2EO-Pf-7eL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6xf-Y4-z1p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-228" y="170"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="PCU-LV-Kjh"/>
+    </inferredMetricsTieBreakers>
 </document>

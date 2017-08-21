@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32392CEC1F47AD7E00701925 /* NLPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32392CEB1F47AD7E00701925 /* NLPManager.swift */; };
+		32392CF01F47B44200701925 /* TextAnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32392CEF1F47B44200701925 /* TextAnalysisViewController.swift */; };
+		32392CF21F48DA9700701925 /* LemmasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32392CF11F48DA9700701925 /* LemmasViewController.swift */; };
 		32D748C11F23E440000C18E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D748C01F23E440000C18E8 /* AppDelegate.swift */; };
-		32D748C31F23E440000C18E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D748C21F23E440000C18E8 /* ViewController.swift */; };
+		32D748C31F23E440000C18E8 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D748C21F23E440000C18E8 /* MainController.swift */; };
 		32D748C61F23E440000C18E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32D748C41F23E440000C18E8 /* Main.storyboard */; };
 		32D748C81F23E440000C18E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32D748C71F23E440000C18E8 /* Assets.xcassets */; };
 		32D748CB1F23E440000C18E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32D748C91F23E440000C18E8 /* LaunchScreen.storyboard */; };
@@ -26,9 +29,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		32392CEB1F47AD7E00701925 /* NLPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NLPManager.swift; sourceTree = "<group>"; };
+		32392CEF1F47B44200701925 /* TextAnalysisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAnalysisViewController.swift; sourceTree = "<group>"; };
+		32392CF11F48DA9700701925 /* LemmasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LemmasViewController.swift; sourceTree = "<group>"; };
 		32D748BD1F23E440000C18E8 /* NLPDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NLPDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D748C01F23E440000C18E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		32D748C21F23E440000C18E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		32D748C21F23E440000C18E8 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		32D748C51F23E440000C18E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		32D748C71F23E440000C18E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32D748CA1F23E440000C18E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -78,7 +84,10 @@
 			isa = PBXGroup;
 			children = (
 				32D748C01F23E440000C18E8 /* AppDelegate.swift */,
-				32D748C21F23E440000C18E8 /* ViewController.swift */,
+				32D748C21F23E440000C18E8 /* MainController.swift */,
+				32392CEF1F47B44200701925 /* TextAnalysisViewController.swift */,
+				32392CF11F48DA9700701925 /* LemmasViewController.swift */,
+				32392CEB1F47AD7E00701925 /* NLPManager.swift */,
 				32D748C41F23E440000C18E8 /* Main.storyboard */,
 				32D748C71F23E440000C18E8 /* Assets.xcassets */,
 				32D748C91F23E440000C18E8 /* LaunchScreen.storyboard */,
@@ -197,7 +206,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32D748C31F23E440000C18E8 /* ViewController.swift in Sources */,
+				32D748C31F23E440000C18E8 /* MainController.swift in Sources */,
+				32392CF21F48DA9700701925 /* LemmasViewController.swift in Sources */,
+				32392CEC1F47AD7E00701925 /* NLPManager.swift in Sources */,
+				32392CF01F47B44200701925 /* TextAnalysisViewController.swift in Sources */,
 				32D748C11F23E440000C18E8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,6 +438,7 @@
 				32D748DC1F23E441000C18E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		32D748DD1F23E441000C18E8 /* Build configuration list for PBXNativeTarget "NLPDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -434,6 +447,7 @@
 				32D748DF1F23E441000C18E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
