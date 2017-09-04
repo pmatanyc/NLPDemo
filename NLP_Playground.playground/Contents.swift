@@ -76,4 +76,4 @@ func tagNames(text: String) -> [TaggedToken] {
 }
 
 tagNames(text: "This year, Apple held WWDC at San Jose, CA. Michelle Obama was a surprise guest speaker.")
-
+tagNames(text: "For some strange reason, the NLP name identification functionality doesn't recognize certain organization names, including Facebook or Twitter or BuzzFeed. I have no explanation for this, other than... Apple. 🤷🏻‍♀️")
