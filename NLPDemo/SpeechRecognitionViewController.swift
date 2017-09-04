@@ -1,5 +1,5 @@
 //
-//  MainController.swift
+//  SpeechRecognitionViewController.swift
 //  NLPDemo
 //
 //  Created by Paola Mata on 7/22/17.
@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 import Speech
 
-class MainViewController: UIViewController, SFSpeechRecognizerDelegate {
+class SpeechRecognitionViewController: UIViewController, SFSpeechRecognizerDelegate {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var recordButton: UIButton!
 

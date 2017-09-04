@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13178.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WFa-dV-mZJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13178.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wxA-3i-W6H">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--Speech To Text Analysis-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="NLPDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SpeechToText" title="Speech To Text Analysis" id="BYZ-38-t0r" customClass="SpeechRecognitionViewController" customModule="NLPDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -40,27 +40,20 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="UCw-Vq-4dN">
-                        <barButtonItem key="rightBarButtonItem" title="Text Analysis" id="11G-Mj-MwD">
-                            <connections>
-                                <segue destination="fKQ-Ny-Q8k" kind="show" id="DgY-XH-SSb"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="UCw-Vq-4dN"/>
                     <connections>
                         <outlet property="descriptionLabel" destination="Zbl-mH-dRa" id="ryR-5g-UeD"/>
                         <outlet property="recordButton" destination="zUL-N7-b0w" id="w6J-cn-cjX"/>
-                        <segue destination="fKQ-Ny-Q8k" kind="show" id="PCU-LV-Kjh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="476" y="170.46476761619192"/>
+            <point key="canvasLocation" x="-746" y="-609"/>
         </scene>
-        <!--Text Analysis View Controller-->
+        <!--Text Analysis-->
         <scene sceneID="smb-Yo-5Ed">
             <objects>
-                <viewController storyboardIdentifier="TextAnalysis" id="fKQ-Ny-Q8k" customClass="TextAnalysisViewController" customModule="NLPDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TextAnalysis" title="Text Analysis" id="fKQ-Ny-Q8k" customClass="TextAnalysisViewController" customModule="NLPDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eVv-be-FTF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -111,13 +104,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BY8-iw-RoZ"/>
                     </view>
-                    <navigationItem key="navigationItem" id="b2t-Il-jhN">
-                        <barButtonItem key="rightBarButtonItem" title="Lemmatization" id="RqQ-49-Imm">
-                            <connections>
-                                <segue destination="zsW-WB-foR" kind="show" id="RLM-F7-ivx"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="b2t-Il-jhN"/>
                     <connections>
                         <outlet property="partOfSpeechSegmentedControl" destination="JMR-xW-W08" id="Wex-ko-BkK"/>
                         <outlet property="tagSchemesSegmentedControl" destination="siE-Rz-vZd" id="2ev-Gq-Mgt"/>
@@ -126,12 +113,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3SY-N0-bwf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1181.5999999999999" y="165.06746626686657"/>
+            <point key="canvasLocation" x="302" y="-170"/>
         </scene>
-        <!--Lemmas View Controller-->
+        <!--Lemmatization-->
         <scene sceneID="2gB-Gj-hbB">
             <objects>
-                <viewController id="zsW-WB-foR" customClass="LemmasViewController" customModule="NLPDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Lemmatization" title="Lemmatization" id="zsW-WB-foR" customClass="LemmasViewController" customModule="NLPDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lqC-gS-k6U">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -139,13 +126,13 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="usy-ie-8cf">
                                 <rect key="frame" x="10" y="130" width="355" height="527"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">Shannon and Matt wanted to see a movie. It was date night, and on date nights, they see movies. Shannon turned to her most trusted moviegoing adviser. Matt turned to his.
+                                <string key="text">Shannon and Matt wanted to see a movie. It was date night, and on date nights, they see movies. Shannon turned to her most trusted moviegoing adviser. Matt turned to his.
 
 “It had over a 93 percent! I think it was actually 97 percent,” says Shannon as she exits a Saturday-evening screening of Detroit at Los Angeles’s Glendale Galleria mall. “I just trust Rotten Tomatoes.”
 
 “I hate Rotten Tomatoes,” says Matt, Shannon’s date who works in home video marketing for a major studio. “I think it’s helping ruin the movie industry. I work in the movie industry. … I hear too many people say, ‘I won’t see anything under 80 percent.’ But the way that they determine the rating is [that] people now game the system.”
 
-Matt trusts filmmakers and the word around town when he makes his decision. Shannon uses a website that aggregates reviews and tabulates a score that represents a movie’s “freshness.” Shannon sees consensus in math. Matt sees a fraudulent system.</mutableString>
+Matt trusts filmmakers and the word around town when he makes his decision. Shannon uses a website that aggregates reviews and tabulates a score that represents a movie’s “freshness.” Shannon sees consensus in math. Matt sees a fraudulent system.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -174,28 +161,92 @@ Matt trusts filmmakers and the word around town when he makes his decision. Shan
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gCa-Q4-64P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1880.8" y="159.67016491754123"/>
+            <point key="canvasLocation" x="-747" y="1110"/>
+        </scene>
+        <!--Emojis-->
+        <scene sceneID="Img-Ac-HJK">
+            <objects>
+                <viewController storyboardIdentifier="Emojis" title="Emojis" id="HRU-St-ARB" customClass="EmojisViewController" customModule="NLPDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b0M-IG-P1P">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Emojis!!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vEZ-en-ryM">
+                                <rect key="frame" x="10" y="74" width="355" height="319"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vEZ-en-ryM" firstAttribute="top" secondItem="gtT-2i-HxU" secondAttribute="top" constant="10" id="1G9-Qg-caX"/>
+                            <constraint firstItem="vEZ-en-ryM" firstAttribute="leading" secondItem="gtT-2i-HxU" secondAttribute="leading" constant="10" id="6cM-Ox-B0F"/>
+                            <constraint firstItem="vEZ-en-ryM" firstAttribute="centerY" secondItem="b0M-IG-P1P" secondAttribute="centerY" constant="-100" id="XGf-mw-E6f"/>
+                            <constraint firstItem="gtT-2i-HxU" firstAttribute="trailing" secondItem="vEZ-en-ryM" secondAttribute="trailing" constant="10" id="udl-4R-ei3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gtT-2i-HxU"/>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="vEZ-en-ryM" id="KfB-6o-e9E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZBX-FO-xev" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="315.5" y="657.5"/>
+        </scene>
+        <!--Demo Table View Controller-->
+        <scene sceneID="eMD-IE-JLg">
+            <objects>
+                <tableViewController id="sLV-RR-9KC" customClass="DemoTableViewController" customModule="NLPDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="o3E-pZ-Gxi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="eAx-W6-iYV">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eAx-W6-iYV" id="Oj7-Jj-PXL">
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="sLV-RR-9KC" id="3Bt-4c-JJR"/>
+                            <outlet property="delegate" destination="sLV-RR-9KC" id="bGD-oU-WQp"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="CCr-Oi-2V7"/>
+                    <connections>
+                        <segue destination="fKQ-Ny-Q8k" kind="show" id="ubT-Mv-9fv"/>
+                        <segue destination="zsW-WB-foR" kind="show" id="rvN-4O-gPF"/>
+                        <segue destination="HRU-St-ARB" kind="show" id="0X2-4K-2xT"/>
+                        <segue destination="BYZ-38-t0r" kind="show" id="hqc-iJ-Via"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="skv-R9-Sgq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-747" y="250"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="2OF-Rp-S4J">
+        <scene sceneID="Yy7-CC-upH">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WFa-dV-mZJ" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wxA-3i-W6H" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MIc-m1-hgz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Uwz-Tc-GZj">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="2EO-Pf-7eL"/>
+                        <segue destination="sLV-RR-9KC" kind="relationship" relationship="rootViewController" id="dNp-y3-eha"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6xf-Y4-z1p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZTN-cb-yU6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-228" y="170"/>
+            <point key="canvasLocation" x="-1786" y="118"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="PCU-LV-Kjh"/>
-    </inferredMetricsTieBreakers>
 </document>
